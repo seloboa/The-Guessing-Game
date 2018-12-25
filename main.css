@@ -9,7 +9,11 @@ body {
   color: white;
   text-align: center;
   background-image: url('background.gif');
+  min-height:100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
+  -moz-background-size: cover;
 }
 
 ul {
@@ -21,24 +25,24 @@ ul {
 ul li {
   display: inline-block;
   list-style-type: none;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid white;
   font-size: 20px;
 }
 
 h1{
-  font-size: 60px;
+  font-size: 50px;
   margin: 0px;
 }
 h2{
-  font-size: 35px;
+  font-size: 30px;
 }
 h3{
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #footnote{
-  position: fixed;
+  position: absolute;
   bottom: 15px;
   height: 80px;
   left: 50%;
