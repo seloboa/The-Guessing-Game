@@ -9,19 +9,24 @@
   <body>
     <div class="center">
       <h1>The Guessing Game!</h1>
-      <h2>Guess a number between 1-100!</h2>
+      <h2>Guess a number between 1-100</h2>
       <h3 id="prompt">Can you guess the winning number?!</h3>
-      <h3>Previous Guesses</h3>
-      <ul>
-        <li id="0"></li>
-        <li id="1"></li>
-        <li id="2"></li>
-        <li id="3"></li>
-        <li id="4"></li>
-      </ul>
-      <input type="number" placeholder="Input a number" id="input" />
+
+      <input placeholder="#" id="input"/>
       <button id="submission">Submit</button>
       <button id="replay">Play Again</button> <button id="hint">Hint</button>
+      <h3>Previous Guesses</h3>
+      <ul>
+          <li id="0">--</li>
+          <li id="1">--</li>
+          <li id="2">--</li>
+          <li id="3">--</li>
+          <li id="4">--</li>
+        </ul>
+    </div>
+
+    <div id="footnote">
+      <div class="center" id="git"><a href="https://github.com/seloboa"><img src="GitHub-Mark-Light-64px.png"></a></div>
     </div>
 
     <script src="guessing_game.js"></script>

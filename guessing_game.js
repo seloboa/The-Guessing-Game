@@ -76,13 +76,15 @@ class Game {
   provideHint() {
     this.hintCounter++;
     this.hints.push(this.winningNumber);
-    while (this.hints.length < 3) {
-      this.hints.push(generateWinningNumber());
+    while (this.hints.length < 8) {
+      let num = generateWinningNumber();
+      if(!this.hints.includes(num)){
+        this.hints.push(num);
+      }
     }
     shuffle(this.hints);
-    this.hintPrompt = `The winning number is either ${this.hints[0]}, ${
-      this.hints[1]
-    }, or ${this.hints[2]}.`;
+    this.hintPrompt = `The winning number is one of the following numbers:<br/>
+    ${this.hints.join(', ')}`
   }
 }
 
@@ -96,7 +98,7 @@ replay.addEventListener('click', () => {
   curGame = new Game();
   //reset past guesses
   for (let i = 0; i <= 4; +i++) {
-    document.getElementById(`${i}`).innerHTML = '';
+    document.getElementById(`${i}`).innerHTML = '--';
   }
   document.getElementById('prompt').innerHTML =
     'Can you guess the winning number?!';
