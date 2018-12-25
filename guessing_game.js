@@ -54,18 +54,27 @@ class Game {
       return `You Lose.`;
     }
 
-    if (this.difference() < 10) {
-      return `You're burning up!`;
-    } else if (this.difference() < 25) {
-      return `You're lukewarm.`;
-    } else if (this.difference() < 50) {
-      return `You're a bit chilly.`;
-    } else if (this.difference() < 100) {
-      return `You're ice cold!`;
+    let difference = this.difference();
+    if (this.playersGuess > this.winningNumber) {
+      if (difference <= 10) {
+        return `You're very close. Guess Lower!`;
+      } else if (difference <= 25) {
+        return `You're close. Guess Lower!`;
+      } else if (difference <= 100) {
+        return `You're off quite a bit. Guess Lower!`;
+      }
+    } else {
+      if (difference <= 10) {
+        return `You're very close. Guess Higher!`;
+      } else if (difference <= 25) {
+        return `You're close. Guess Higher!`;
+      } else if (difference <= 100) {
+        return `You're off quite a bit. Guess Higher!`;
+      }
     }
   }
   provideHint() {
-    this.hintCounter ++;
+    this.hintCounter++;
     this.hints.push(this.winningNumber);
     while (this.hints.length < 3) {
       this.hints.push(generateWinningNumber());
