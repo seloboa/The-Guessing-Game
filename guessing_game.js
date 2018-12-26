@@ -42,7 +42,7 @@ class Game {
   checkGuess(num) {
     if (num === this.winningNumber) {
       this.gameEnd = true;
-      return `You Win!`;
+      return `You Win! The winning number is ${this.winningNumber}.`;
     } else if (this.pastGuesses.includes(num)) {
       return `You have already guessed that number.`;
     } else {
@@ -51,7 +51,7 @@ class Game {
 
     if (this.pastGuesses.length === 5) {
       this.gameEnd = true;
-      return `You Lose.`;
+      return `You Lose. The winning number is ${this.winningNumber}.`;
     }
 
     let difference = this.difference();
